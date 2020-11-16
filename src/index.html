@@ -10,20 +10,30 @@
     <script src="../react/react.development.js"></script>
     <script src="../react/react-dom.development.js"></script>
     <script>
-        const person =  () => {
+        class App extends React.Component{
+            render(){
+                return React.createElement('div', {}, [
+                React.createElement('h1', {}, 'React is Rendered!!!'),
+                React.createElement(person, {fname: 'Abdul', sname: 'Kareem'}),
+                React.createElement(person, {fname: 'Abdul', sname: 'Kareem'}),
+                React.createElement(person, {fname: 'Abdul', sname: 'Kareem'})
+            ]);
+            }
+        }
+        const person =  (props) => {
             return React.createElement('div', {}, [
-                React.createElement('h1', {}, "Abdul"),
-                React.createElement('p', {}, "Kareem"),
+                React.createElement('h1', {}, props.fname),
+                React.createElement('p', {}, props.sname),
             ])
         }
-        const App = () => {
-            return React.createElement('div', {}, [
-                React.createElement('h1', {}, 'React is Rendered!!!'),
-                React.createElement(person),
-                React.createElement(person),
-                React.createElement(person)
-            ]);
-        };
+        // const App = () => {
+        //     return React.createElement('div', {}, [
+        //         React.createElement('h1', {}, 'React is Rendered!!!'),
+        //         React.createElement(person, {fname: 'Abdul', sname: 'Kareem'}),
+        //         React.createElement(person, {fname: 'Abdul', sname: 'Kareem'}),
+        //         React.createElement(person, {fname: 'Abdul', sname: 'Kareem'})
+        //     ]);
+        // };
         ReactDOM.render(React.createElement(App), document.getElementById('root'));
     </script>
 </body>
