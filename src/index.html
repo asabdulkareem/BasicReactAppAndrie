@@ -10,8 +10,19 @@
     <script src="../react/react.development.js"></script>
     <script src="../react/react-dom.development.js"></script>
     <script>
+        const person =  () => {
+            return React.createElement('div', {}, [
+                React.createElement('h1', {}, "Abdul"),
+                React.createElement('p', {}, "Kareem"),
+            ])
+        }
         const App = () => {
-            return React.createElement('div', {}, React.createElement('h1', {}, 'React is Rendered!!!'));
+            return React.createElement('div', {}, [
+                React.createElement('h1', {}, 'React is Rendered!!!'),
+                React.createElement(person),
+                React.createElement(person),
+                React.createElement(person)
+            ]);
         };
         ReactDOM.render(React.createElement(App), document.getElementById('root'));
     </script>
